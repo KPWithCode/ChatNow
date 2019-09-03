@@ -21,7 +21,7 @@ const Login = (props: ILoginProps) => {
     }
     // Component did mount 
     const getUser = async () => {
-        if (User && User.role === 'guest') {
+        if (User && User.role === 'admin') {
             props.history.push('/message2')
         }
 

@@ -3,7 +3,7 @@ import * as passport from 'passport';
 
 import { CreateToken } from '../../security/tokens';
 
-const loginRouter = express.Router();
+const loginRouter = express.Router(); 
 
 loginRouter.post('/', passport.authenticate('local'), async (req, res, next) => {
     try {

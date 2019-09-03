@@ -4,10 +4,11 @@ import apiRouter from './routes';
 import './middleware/bearerstrategy';
 import './middleware/localstrategy';
 import * as passport from 'passport';
+import bodyParser = require('body-parser');
 
 const app = express();
 
-
+app.use(bodyParser.json())
 let p = path.join(__dirname, '../public');
 app.use(express.json())
 app.use(express.static(p));

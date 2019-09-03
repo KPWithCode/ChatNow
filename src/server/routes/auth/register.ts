@@ -1,5 +1,4 @@
 import * as express from 'express';
-
 import DB from '../../db';
 import { HashPassword } from '../../security/passwords';
 import { CreateToken } from '../../security/tokens';
@@ -10,9 +9,9 @@ registerRouter.post('/', async (req, res, next) => {
     try {
         let user = req.body;
         user.password = HashPassword(req.body.password);
-        // let userValues = Object["values"](user);
-        // let [result]: any = await DB.Users.insert(userValues);
-        let [result]: any = await DB.Users.insert(user);
+        let userValues = Object["values"](user);
+        let [result]: any = await DB.Users.insert(userValues);
+        // let [result]: any = await DB.Users.insert(user);
         let token = await CreateToken({ userid: result.insertId });
         res.json({
             token,

@@ -18,7 +18,7 @@ usersRouter.get('/:id', async (req, res, next) => {
 
 
 usersRouter.post('/', async (req, res, next) => {
-    console.log('test')
+  
     try {
         let query = req.body.query;
         let newUser = await db.Users.insert(query);

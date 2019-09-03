@@ -3,7 +3,7 @@ import './scss/app';
 import { BrowserRouter as Router, Switch, Route, BrowserRouter } from 'react-router-dom';
 import Register2 from './private/Register2';
 import Message2 from './public/Message2';
-import Login from './private/Login';
+import Login2 from './private/Login2';
 import Home from './public/Home';
  
 
@@ -17,9 +17,9 @@ const App: React.SFC<AppProps> = () => {
             <Router>
                 <Switch>
                     <Route exact path="/" component={Home} />
-                    <Route exact path="/register" component={Register2} />
-                    <Route exact path="/message" component={Message2} />
-                    <Route exact path="/login"component={Login} />
+                    <Route exact path="/register2" component={Register2} />
+                    <Route exact path="/message2" component={Message2} />
+                    <Route exact path="/login"component={Login2} />
                 </Switch>
             </Router>
         </BrowserRouter>

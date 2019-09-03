@@ -1,8 +1,10 @@
 import * as bcrypt from 'bcrypt';
+import passport = require('passport');
 
 export const HashPassword = (password: string) => {
     const salt = bcrypt.genSaltSync(12);
     const hash = bcrypt.hashSync(password, salt);
+    console.log(password)
     return hash;
 };
 
