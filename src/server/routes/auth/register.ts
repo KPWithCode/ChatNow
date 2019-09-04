@@ -10,7 +10,7 @@ registerRouter.post('/', async (req, res, next) => {
         let user = req.body;
         user.password = HashPassword(req.body.password);
         let userValues = Object["values"](user);
-        let [result]: any = await DB.Users.insert(userValues);
+        let result: any = await DB.Users.insert(userValues);
         // let [result]: any = await DB.Users.insert(user);
         let token = await CreateToken({ userid: result.insertId });
         res.json({

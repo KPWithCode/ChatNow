@@ -7,8 +7,8 @@ const findOneByEmail = async (email: any) => knex('Users').select(email)
 const findOneById = async (id: number) => knex('Users').select(id).where('id',id)
 // Query(`INSERT INTO Users (email, password,username) VALUES (?) `, [user]);
 // const insert = async (query:any) => knex('Users').insert(query)
-// async (user: any) => Query(`INSERT INTO Users (username, email, password) VALUES ?`, [user]);
-const insert = async (query:any) => knex('Users').insert(query)
+
+const insert = async (query:any) => Query(`INSERT INTO Users (id,username, email, password) VALUES ?`, [query]);
 // knex('Users').insert(user)
 export default {
     findOneByEmail,

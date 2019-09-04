@@ -23,9 +23,7 @@ const App: React.SFC<AppProps> = () => {
                 </Switch>
             </Router>
         </BrowserRouter>
-
     )
-
 }
 
 export default App;

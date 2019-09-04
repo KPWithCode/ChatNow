@@ -21,7 +21,8 @@ usersRouter.post('/', async (req, res, next) => {
   
     try {
         let query = req.body.query;
-        let newUser = await db.Users.insert(query);
+        let [newUser] = await db.Users.insert(query);
+        res.send(newUser)
         res.json({ message: 'posted!' })
     } catch (err) {
         console.log(err);
